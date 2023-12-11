@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Web Icon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="./Icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Icon/favicon-32x32.png">
+    <link rel="manifest" href="./Icon/site.webmanifest">
+    <!--Font Links-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet">
+    <!--Style sheet link-->
+    <link rel="stylesheet" href="./CSS/Bookings.css">
+    <title>Bookings</title>
+</head>
+<body>
+    <!--Header and hamburger menu-->
+    <section>
+        <header> 
+            <img src="./Icon/Aman-logo.webp" alt="logo" class="logo-img">
+            </header>
+    </section>
+    <section class="form-container">
+        <div class="container">
+          <!-- Your existing form content -->
+          <h1>Reservation Form</h1>
+            <form id="bookingForm">
+                <section class="form-group">
+                    <label for="name">Check-In: </label><br>
+                    <input type="date" id="dateInput" placeholder="dateInput" required>
+                </section>
+
+                <section class="form-group">
+                    <label for="name">Check-Out: </label><br>
+                    <input type="date" id="dateInput2" placeholder="dateInput2" required>
+                </section>
+
+                <section class="form-group">
+                    <label for="name">Name: </label><br>
+                    <input type="text" id="nameInput" placeholder="Name" required>
+                </section>
+
+                <section class="form-group">
+                    <label for="number">phonenumber: </label><br>
+                    <input type="number" id="numInput" placeholder="Phonenumber" required>
+                </section>
+
+                <section class="form-group">
+                    <label for="name">E-mail: </label><br>
+                    <input type="email" id="emailInput" placeholder="Email" required>
+                </section>
+
+                <section class="form-group">
+                    <label for="RoomChoice">Please select your prefered room </label><br>
+                    <select id="size" onchange="roomSize(this)" required>
+                        <option></option>
+                        <option value="Single Room">Single Room</option>
+                        <option value="Double Room">Double Room</option>
+                        <option value="Triple Room">Triple Room</option>
+                    </select>                
+                </section>
+
+                <section class="form-group">
+                    <label for="adult">Adults: </label><br>
+                    <input type="number" id="adultInput" placeholder="adult" required>
+                </section>
+
+                <section class="form-group">
+                    <label for="child">Children: </label><br>
+                    <input type="number" id="childInput" placeholder="child">
+                </section>
+
+                <section class="form-group">
+                    <label><input type="checkbox" class="checkbox" value="WiFi">WiFi</label><br>
+                    <label><input type="checkbox" class="checkbox" value="Pool View">Pool View</label><br>
+                    <label><input type="checkbox" class="checkbox" value="Garden View">Garden View</label><br>
+                    <label><input type="checkbox" class="checkbox" value="Extra Bed">Extra Bed</label><br>
+                </section>
+                
+                <section class="form-group">
+                    <label for="promoCode">Enter Promo Code: </label><br>
+                    <input type="text" id="promoCode"><br>
+                </section>
+                
+                <div class="button-container">
+                    <button class="button-31" id="bookNowBtn" onclick="this.form.reset();">Book Now</button><br>
+                    <button class="button-31" id="addToFavoritesBtn">Add to Favorites</button><br>
+                    <button class="button-31" id="printLocal">Check Favorite order</button>
+                </div>
+                
+            </form>
+        </div>
+        
+        <section class="container">
+          <h1>Adventure Booking</h1>
+            <form id="bookingForm">
+                <section class="form-group">
+                    <label for="name">Check-In: </label>
+                    <input type="date" id="advDateInput" placeholder="advDateInput" required>
+                </section>
+
+                <section class="form-group">
+                    <label for="name">Check-Out: </label>
+                    <input type="date" id="advDateInput2" placeholder="advDateInput2" required>
+                </section>
+                
+                <section class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" id="advName" placeholder="Name" required>
+                </section>
+    
+                <section class="form-group">
+                    <label for="number">phonenumber: </label>
+                    <input type="number" id="advNumInput" placeholder="Phonenumber" required>
+                </section>
+    
+                <section class="form-group">
+                    <label for="name">E-mail: </label>
+                    <input type="email" id="advEmailInput" placeholder="Email" required>
+                </section>
+
+                <section class="form-group">
+                    <label for="RoomChoice">Select your prefered adventure</label><br>
+                    <select id="package" onchange="AdventurePackage(this)" required>
+                        <option></option>
+                        <option value="The Art of Tokyo Art">The art of Tokyo</option>
+                        <option value="Treak to Mount Fuji">Treak to Mount Fuji</option>
+                        <option value="Rediscover Tokyo">Rediscover Tokyo</option>
+                      </select>                
+                </section>
+    
+                <div class="input-group">
+                    <label for="localAdults1">Local Adult: </label>
+                    <input type="number" id="localAdults" min="0" value="0">
+                    <label for="perHour">Per Hour: </label>
+                    <input type="number" id="perHour" min="0" value="0">
+                </div>
+                <br>
+                <label for="localKids">Local Kids (above 5 years): </label>
+                <input type="number" id="localKids" min="0" value="0"><br>
+
+                <label for="foreignAdults">Foreign Adults: </label>
+                <input type="number" id="foreignAdults" min="0" value="0"><br>
+
+                <label for="foreignKids">Foreign Kids: </label>
+                <input type="number" id="foreignKids" min="0" value="0"><br>
+
+                
+
+                <button class="button-31" id="bookAdventureBtn">Book Adventure</button>
+            </form>
+        </section>
+      
+        <section class="container">
+            <fieldset>
+                <table>
+                    <tr>
+                    <th colspan="2">Current Reservation Details</th>
+                    </tr>
+                    <tr>
+                    <td>Name: </td>
+                    <td><p id="output1"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Phonenumber: </td>
+                        <td><p id="output2"></p></td>
+                    </tr>
+                    <tr>
+                        <td>E-mail: </td>
+                        <td><p id="output3"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Check-in: </td>
+                        <td><p id="output4"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Check-out: </td>
+                        <td><p id="output5"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Room of Choice: </td>
+                        <td><p id="output6"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Adults: </td>
+                        <td><p id="output7"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Children: </td>
+                        <td><p id="output8"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Nights: </td>
+                        <td><p id="output9"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Extra Ammenities: </td>
+                        <td><p id="output10"></p></td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <table>
+                    <tr>
+                    <th colspan="2">Adventure Details</th>
+                    </tr>
+                    <tr>
+                    <td>Name: </td>
+                    <td><p id="output11"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Phonenumber: </td>
+                        <td><p id="output12"></p></td>
+                    </tr>
+                    <tr>
+                        <td>E-mail: </td>
+                        <td><p id="output13"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Check-in: </td>
+                        <td><p id="output14"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Check-out: </td>
+                        <td><p id="output15"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Adventure of Choice: </td>
+                        <td><p id="output16"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Local Adults: </td>
+                        <td><p id="output17"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Local Children: </td>
+                        <td><p id="output18"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Forgein Adult: </td>
+                        <td><p id="output19"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Forgein Children: </td>
+                        <td><p id="output20"></p></td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <table>
+                    <tr>
+                    <th colspan="2">Overall booking details</th>
+                    </tr>
+                    <tr>
+                        <td>Current room booking cost: </td>
+                        <td><p id="cost"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Total Adventure booking cost: </td>
+                        <td><p id="totalAdventureCost"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Overall booking cost: </td>
+                        <td><p id="totalCost"></p></td>
+                    </tr>
+                </table>
+            </fieldset>
+        <!-- Button to check loyalty points -->
+        <button class="button-31" id="checkLoyaltyBtn">Check Loyalty</button>
+    </section>
+    <script src="./Script/main.js"></script>
+</body>
+</html>
