@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/Bookings.css">
+    <title>Hotel & Adventure Booking</title>
+</head>
+<body>
+    <header>
+        <h1>Hotel & Adventure Booking</h1>
+        <nav class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+            <span></span>
+            </label>
+            <ul class="menu__box">
+            <li><a class="menu__item" href="./index.html">Home</a></li>
+            <li><a class="menu__item" href="./Hotel_Branches.html">Branches</a></li>
+            <li><a class="menu__item" href="./Adventures.html">Adventures</a></li>
+            <li><a class="menu__item" href="./Restaurants.html">Resturants</a></li>
+            <li><a class="menu__item" href="./Booking_page.html">Bookings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="container">
+        <h2>Book a Hotel</h2>
+        <form action="hotel_booking.php" method="post">
+            <label for="hotelName">Package Name:</label>
+            <select id="PKGName" name="PKGName" required>
+                <option value=""></option>
+                <option value="Aman-Suite">Aman Suite</option>
+                <option value="Panorama-Suite">Panorama Suite</option>
+                <option value="Discover">Discover the city</option>
+                <option value="Art-Tokyo">The Art of tokyo</option>
+            </select>
+            <label for="checkInDate">Check-in Date:</label>
+            <input type="date" id="checkInDate" name="checkInDate" required>
+
+            <label for="checkOutDate">Check-out Date:</label>
+            <input type="date" id="checkInDate" name="checkInDate" required>
+
+            <input type="submit" value="Book Hotel">
+        </form>
+
+        <h2>Book an Adventure package</h2>
+        <form action="adventure_booking.php" method="post">
+            <label for="adventureName">Adventure Name:</label>
+            <select id="AdvPKGName" name="AdvPKGName" required>
+                <option value=""></option>
+                <option value="Misogi-retreat">Misogi Retrear</option>
+                <option value="Japan-Journey">Japan Journey</option>
+            </select>
+
+            <label for="adventureDate">Adventure Date:</label>
+            <input type="date" id="adventureDate" name="adventureDate" required>
+
+            <label for="participants">Number of Participants:</label>
+            <input type="number" id="participants" name="participants" required>
+
+            <input type="submit" value="Book Adventure">
+        </form>
+    </section>
+    <footer>
+        <!--Pictures taken from: www.Pexels.com-->
+        <!--art and videos taken from: https:https://www.aman.com -->
+        <p class="text-center">© 2023 Aman Tokyo All rights reserved.</p>
+    </footer>
+</body>
+</html>

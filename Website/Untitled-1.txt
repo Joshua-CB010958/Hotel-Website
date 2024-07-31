@@ -1,0 +1,9 @@
+<label for="hotelName">Package Name:</label>
+            <select id="PKGName" name="PKGName" required>
+                <option value=""></option>
+                <option value="Aman-Suite">Aman Suite</option>
+                <option value="Panorama-Suite">Panorama Suite</option>
+                <option value="Discover">Discover the city</option>
+                <option value="Art-Tokyo">The Art of tokyo</option>
+            </select>
+
